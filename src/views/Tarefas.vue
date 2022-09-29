@@ -11,7 +11,7 @@
         active-class=""
       >
       <!-- Componente Tarefas -->
-       <Tarefas/>
+       <Tarefa/>
 
 
       </v-list-item-group>
@@ -20,13 +20,13 @@
 </template>
 
 <script>
-import Tarefas from '../components/tarefas/Tarefa.vue'
+import Tarefa from '../components/tarefas/Tarefa.vue'
 
 export default {
   name: 'Home',
 
   components: {
-    Tarefas
+    Tarefa
   }
 
 }
