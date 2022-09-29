@@ -11,7 +11,14 @@
         active-class=""
       >
       <!-- Componente Tarefas -->
-       <Tarefa/>
+      <div
+      v-for="tarefa, index in tarefas"
+      :key="index"
+      >
+        <Tarefa
+        :tarefa="tarefa"
+        />
+      </div>
 
 
       </v-list-item-group>
@@ -27,6 +34,15 @@ export default {
 
   components: {
     Tarefa
+  },
+
+  data(){
+    return {
+      tarefas:[
+        {titulo: 'Estudar Vue', concluido: 'false'},
+        {titulo: 'Tomar remédio', concluido: 'false'}
+      ]
+    }
   }
 
 }
