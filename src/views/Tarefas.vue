@@ -1,12 +1,22 @@
 <template>
   <div>
+    <!-- text-field -->
+    <v-col
+          cols="12"
+        >
+          <v-text-field
+            v-model="campoInput"
+            label="Qual sua tarefa"
+            outlined
+            clearable
+            @keyup.enter="handleAddTarefa()"
+          ></v-text-field>
+        </v-col>
     <v-list
       flat
       subheader
     >
-
       <v-list-item-group
-        v-model="settings"
         multiple
         active-class=""
       >
@@ -38,10 +48,22 @@ export default {
 
   data(){
     return {
+      campoInput: null,
       tarefas:[
-        {titulo: 'Estudar Vue', concluido: 'false'},
-        {titulo: 'Tomar remédio', concluido: 'false'}
+        {titulo: 'Estudar Vue', concluido: false},
+        {titulo: 'Tomar remédio', concluido: false}
       ]
+    }
+  },
+  methods:{
+    handleAddTarefa(){
+      if(this.campoInput){
+          this.tarefas.push({
+            titulo: this.campoInput,
+            concluido: false
+          })
+          this.campoInput = null
+      }
     }
   }
 
