@@ -16,6 +16,7 @@
         <v-list-item
           v-for="(item, index) in items"
           :key="index"
+          @click="item.mClick"
         > 
           <v-icon  left >{{ item.icone }}</v-icon>
 
@@ -32,8 +33,23 @@
           export default {
             data: () => ({
               items: [
-                { icone:"mdi-pencil", title: 'Editar' },
-                { icone: "mdi-trash-can", title: 'Excluir' },
+                { 
+                    icone:"mdi-pencil", 
+                    title: 'Editar',
+                    mClick(){
+                            console.log('Editar');  
+                              
+                    }
+                },
+
+                { 
+                    icone: "mdi-trash-can", 
+                    title: 'Excluir',
+                    mClick(){
+                            console.log('Excluir');  
+                              
+                    }
+                },
   
               ],
             }),
