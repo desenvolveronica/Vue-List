@@ -16,8 +16,11 @@
         <v-list-item
           v-for="(item, index) in items"
           :key="index"
-        >
+        > 
+          <v-icon  left >{{ item.icone }}</v-icon>
+
           <v-list-item-title>{{ item.title }}</v-list-item-title>
+
         </v-list-item>
       </v-list>
     </v-menu> 
