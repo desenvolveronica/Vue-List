@@ -22,7 +22,7 @@
       >
       <!-- Componente Tarefas -->
       <div
-      v-for="tarefa, index in tarefas"
+      v-for="tarefa, index in $store.state.tarefas"
       :key="index"
       >
         <Tarefa
@@ -49,10 +49,6 @@ export default {
   data(){
     return {
       campoInput: null,
-      tarefas:[
-        {titulo: 'Estudar Vue', concluido: false},
-        {titulo: 'Tomar remédio', concluido: false}
-      ]
     }
   },
   methods:{
