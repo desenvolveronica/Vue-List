@@ -21,7 +21,7 @@
 
 <script>
 export default {
-          props:['tarefa']
+  props:['tarefa']
 }
 </script>
 

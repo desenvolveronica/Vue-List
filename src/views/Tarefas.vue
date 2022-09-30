@@ -53,13 +53,11 @@ export default {
   },
   methods:{
     handleAddTarefa(){
-      if(this.campoInput){
-          this.tarefas.push({
-            titulo: this.campoInput,
-            concluido: false
-          })
+          this.$store.commit('adicionaTarefa', this.campoInput)
           this.campoInput = null
-      }
+
+          console.log('Commit em adicionaTarefa passando pra ele o campo input');
+      
     }
   }
 

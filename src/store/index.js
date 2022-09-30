@@ -6,13 +6,24 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state:{
     tarefas:[
-      {titulo: 'Estudar Vue', concluido: false},
-      {titulo: 'Tomar remédio', concluido: false}
+      {id: 1, titulo: 'Estudar Vue', concluido: false},
+      {id: 2, titulo: 'Tomar remédio', concluido: false}
     ]
   },
-  mutations:{
 
+  mutations:{
+    adicionaTarefa(state, titulo){
+      if(titulo){
+        state.tarefas.push({
+          id: new Date().getTime(),
+          titulo,
+          concluido: false
+        })
+    }
+    console.log('adiciona tarefa');
+    }
   },
+  
   actions:{
     
   },
