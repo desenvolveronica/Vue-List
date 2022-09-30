@@ -15,11 +15,13 @@
               <v-list-item-title>{{tarefa.titulo}}</v-list-item-title>
             </v-list-item-content>
 
-            <!-- icone das tarefas -->
            
-              <v-btn icon @click.stop="handleRemoveTarefa(tarefa.id)">
+              <!-- <v-btn icon @click.stop="handleRemoveTarefa(tarefa.id)">
                 <v-icon color="red lighten-3">mdi-trash-can</v-icon>
-              </v-btn>
+              </v-btn> -->
+
+              <!-- componente menu -->
+              <TarefaMenu/>
           </template>
         </v-list-item>
         <v-divider
@@ -28,15 +30,17 @@
 </template>
 
 <script>
+import TarefaMenu from "./TarefaMenu.vue";
 export default {
-  props:['tarefa'],
-
-  methods:{
-    handleRemoveTarefa(id){
-      this.$store.commit('removeTarefa', id)
-      console.log('Removeu pois com o filter o retorno é todos os diferentes do id selecionado');
-    }
-  }
+    components: { TarefaMenu },
+    props: ["tarefa"],
+    methods: {
+        handleRemoveTarefa(id) {
+            this.$store.commit("removeTarefa", id);
+            console.log("Removeu pois com o filter o retorno é todos os diferentes do id selecionado");
+        }
+    },
+    
 }
 </script>
 
