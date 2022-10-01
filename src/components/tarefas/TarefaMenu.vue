@@ -29,6 +29,7 @@
   <ModalEditar
   v-if="items[0].modal"
   @fechaModal = "items[0].modal = false"
+  :tarefa= "tarefa"
   />
   </div>
 </template>
@@ -36,6 +37,7 @@
 <script>
 import ModalEditar from '../modal/ModalEditar.vue';
 export default {
+props: ['tarefa'],
 components: { ModalEditar },
 data: () => ({
   items: [
@@ -64,7 +66,7 @@ data: () => ({
    
     
 }
-        </script>
+</script>
 
 <style>
 

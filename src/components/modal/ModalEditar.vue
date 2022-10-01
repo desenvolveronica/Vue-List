@@ -11,15 +11,18 @@
           Editar
         </v-card-title>
         <v-divider/>
+
         <v-card-text class="mt-4">
           Infome o novo nome da tarefa
         </v-card-text>
+
         <!-- text-field -->
         <v-text-field
             label="Digite..."
             placeholder="Novo título"
             outlined
             class="px-3"
+            v-modal="titulo"
           ></v-text-field>
 
         <v-card-actions>
@@ -46,13 +49,16 @@
 </template>
 
 <script>
-          export default {
-            data () {
-              return {
-                dialog: true,
-              }
-            },
-          }
+export default {
+props:['tarefa'],
+data (){
+  return {
+   dialog: true,
+   titulo: null
+}}, 
+
+}
+
 </script>
 
 <style>
