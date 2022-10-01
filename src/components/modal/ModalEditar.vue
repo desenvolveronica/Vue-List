@@ -5,37 +5,38 @@
       v-model="dialog"
       persistent
       max-width="290"
-    >
-      <template v-slot:activator="{ on, attrs }">
-        <v-btn
-          color="primary"
-          dark
-          v-bind="attrs"
-          v-on="on"
-        >
-          Open Dialog
-        </v-btn>
-      </template>
+    > 
       <v-card>
         <v-card-title class="text-h5">
-          Use Google's location service?
+          Editar
         </v-card-title>
-        <v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</v-card-text>
+        <v-divider/>
+        <v-card-text class="mt-4">
+          Infome o novo nome da tarefa
+        </v-card-text>
+        <!-- text-field -->
+        <v-text-field
+            label="Digite..."
+            placeholder="Novo título"
+            outlined
+            class="px-3"
+          ></v-text-field>
+
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-            color="green darken-1"
+            color="red darken-1"
             text
             @click="dialog = false"
           >
-            Disagree
+            Cancelar
           </v-btn>
           <v-btn
             color="green darken-1"
             text
             @click="dialog = false"
           >
-            Agree
+            Editar
           </v-btn>
         </v-card-actions>
       </v-card>
