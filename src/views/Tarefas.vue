@@ -27,6 +27,7 @@
       >
         <Tarefa
         :tarefa="tarefa"
+        
         />
       </div>
 

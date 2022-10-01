@@ -25,35 +25,35 @@
         </v-list-item>
       </v-list>
     </v-menu> 
-
+    <!-- componente Modal Editar -->
+  <ModalEditar/>
   </div>
 </template>
 
 <script>
+import ModalEditar from '../modal/ModalEditar.vue';
           export default {
-            data: () => ({
-              items: [
-                { 
-                    icone:"mdi-pencil", 
-                    title: 'Editar',
-                    mClick(){
-                            console.log('Editar');  
-                              
-                    }
-                },
-
-                { 
-                    icone: "mdi-trash-can", 
-                    title: 'Excluir',
-                    mClick(){
-                            console.log('Excluir');  
-                              
-                    }
-                },
-  
-              ],
-            }),
-          }
+    components: { ModalEditar },
+    data: () => ({
+        items: [
+            {
+                icone: "mdi-pencil",
+                title: "Editar",
+                mClick() {
+                    console.log("Editar");
+                }
+            },
+            {
+                icone: "mdi-trash-can",
+                title: "Excluir",
+                mClick() {
+                    console.log("Excluir");
+                }
+            },
+        ],
+    }),
+    
+}
         </script>
 
 <style>

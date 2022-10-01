@@ -15,11 +15,6 @@
               <v-list-item-title>{{tarefa.titulo}}</v-list-item-title>
             </v-list-item-content>
 
-           
-              <!-- <v-btn icon @click.stop="handleRemoveTarefa(tarefa.id)">
-                <v-icon color="red lighten-3">mdi-trash-can</v-icon>
-              </v-btn> -->
-
               <!-- componente menu -->
               <TarefaMenu/>
           </template>
