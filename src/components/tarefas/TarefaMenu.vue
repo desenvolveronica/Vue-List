@@ -16,7 +16,7 @@
         <v-list-item
           v-for="(item, index) in items"
           :key="index"
-          @click="item.mClick"
+          @click="item.mClick()"
         > 
           <v-icon  left >{{ item.icone }}</v-icon>
 
@@ -26,7 +26,9 @@
       </v-list>
     </v-menu> 
     <!-- componente Modal Editar -->
-  <ModalEditar/>
+  <ModalEditar
+  v-if="items[0].modal"
+  />
   </div>
 </template>
 
@@ -39,13 +41,16 @@ import ModalEditar from '../modal/ModalEditar.vue';
             {
                 icone: "mdi-pencil",
                 title: "Editar",
+                modal: false,
                 mClick() {
                     console.log("Editar");
+                    this.modal = true
                 }
             },
             {
                 icone: "mdi-trash-can",
                 title: "Excluir",
+                modal: false,
                 mClick() {
                     console.log("Excluir");
                 }
