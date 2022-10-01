@@ -28,35 +28,40 @@
     <!-- componente Modal Editar -->
   <ModalEditar
   v-if="items[0].modal"
+  @fechaModal = "items[0].modal = false"
   />
   </div>
 </template>
 
 <script>
 import ModalEditar from '../modal/ModalEditar.vue';
-          export default {
-    components: { ModalEditar },
-    data: () => ({
-        items: [
-            {
-                icone: "mdi-pencil",
-                title: "Editar",
-                modal: false,
-                mClick() {
-                    console.log("Editar");
-                    this.modal = true
-                }
-            },
-            {
-                icone: "mdi-trash-can",
-                title: "Excluir",
-                modal: false,
-                mClick() {
-                    console.log("Excluir");
-                }
-            },
+export default {
+components: { ModalEditar },
+data: () => ({
+  items: [
+    {
+      icone: "mdi-pencil",
+      title: "Editar",
+      modal: false,
+      mClick()
+       {
+        console.log("Editar");
+        this.modal = true
+        }
+      },
+      {
+        icone: "mdi-trash-can",
+        title: "Excluir",
+        modal: false,
+        mClick() 
+        {
+          console.log("Excluir");
+        }
+      },
         ],
     }),
+
+   
     
 }
         </script>
